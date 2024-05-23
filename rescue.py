@@ -65,7 +65,7 @@ def main():
     print(f'Compromised address: {compromised.address}')
     print('-' * 100)
 
-    gas_price: Wei = Wei(int(w3.eth.gas_price))
+    gas_price: Wei = w3.eth.gas_price
     eth_to_cover_transfer: Wei = Wei(gas_price * WETH_TRANSFER_GAS_LIMIT)
 
     rescuer_nonce: int = w3.eth.get_transaction_count(rescuer.address)
